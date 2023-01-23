@@ -2,12 +2,11 @@
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data" asp-validation-summary="All">
 	<input asp-for="Id" hidden />
-
 	<div class="row">
 		<div class="col-10">
 			<div class="border p-3 mt-4 row">
 				<div class="col-12 pb-2">
-					<h2 class="text-primary">@(Model.Id != 0 ? "Dodaj" : "Edytuj")  Użytkownika</h2>
+					<h2 class="text-primary">@(Model.Id != 0 ? "Edytuj" : "Dodaj")  Użytkownika</h2>
 					<hr />
 				</div>
 				<div class="text-danger">
@@ -25,7 +24,7 @@
 				</div>
 				<div class="mb-3">
 					<label asp-for="DateOfBirth"></label>
-					<input asp-for="DateOfBirth" class="form-control" type="date" />
+					<input asp-for="DateOfBirth" class="form-control" type="date" value="@Model.DateOfBirth.ToString("yyyy-MM-dd")"   />
 					<span asp-validation-for="DateOfBirth" class="text-danger"></span>
 				</div>
 				<div class="mb-3">

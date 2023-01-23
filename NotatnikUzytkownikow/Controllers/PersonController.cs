@@ -43,7 +43,7 @@ namespace NotatnikUzytkownikow.Controllers
 
         //POST
         [HttpPost]
-        [ValidateAntiForgeryToken] //https://www.devcurry.com/2013/01/what-is-antiforgerytoken-and-why-do-i.html
+        [AutoValidateAntiforgeryToken]
         public IActionResult Upsert(Person obj)
         {
             if (ModelState.IsValid)
@@ -64,8 +64,6 @@ namespace NotatnikUzytkownikow.Controllers
             {
                 return View(obj);
             }
-            return RedirectToAction("Index");
-
         }
         public IActionResult GenerateReport()
         {
