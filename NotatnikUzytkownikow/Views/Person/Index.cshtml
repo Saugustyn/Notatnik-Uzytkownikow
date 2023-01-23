@@ -3,13 +3,13 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="container p-2">
+<div class="container p-6">
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="text-primary">Lista Użytkowników</h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Person" asp-action="GenerateReport" class="btn btn-primary">
+            <a asp-controller="Person" asp-action="GenerateReport" class="btn btn-primary" style="background-color: green;">
                 <i class="bi bi-plus-circle-dotted"></i> &nbsp; Generuj Raport
             </a>
             <a asp-controller="Person" asp-action="Upsert" class="btn btn-primary">
@@ -21,28 +21,28 @@
     <table class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>
-                    Imię
+                <th class="text-primary font-weight-bold">
+                     Imię
                 </th>
-                <th>
+                <th class="text-primary font-weight-bold">
                     Nazwisko
                 </th>
-                <th>
+                <th class="text-primary font-weight-bold">
                     Data Urodzenia
                 </th>
-                <th>
+                <th class="text-primary font-weight-bold">
                     Płeć
                 </th>
-                <th>
+                <th class="text-primary font-weight-bold">
                     Stanowisko
                 </th>
-                <th>
+                <th class="text-primary font-weight-bold">
                     Numer Telefonu
                 </th>
-                <th>
+                <th class="text-primary font-weight-bold">
                     Wzrost
                 </th>
-                <th>
+                <th class="text-primary font-weight-bold">
                     Rozmiar Buta
                 </th>
             </tr>
