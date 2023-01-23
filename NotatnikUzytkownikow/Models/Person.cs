@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace NotatnikUzytkownikow.Models
 {
@@ -13,14 +14,16 @@ namespace NotatnikUzytkownikow.Models
         [StringLength(150)]
         public string LastName { get; set; }
         [Required]
-        [Range(typeof(DateTime), "1/1/1900", "DateTime.Now")]
+        [CurrentDate(ErrorMessage = "Hire Date must be less than or equal to Today's Date")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
+        [HiddenInput(DisplayValue = false)]
         [Required]
         [RegularExpression("^(Male|Female)$")]
         public string Gender { get; set; }
         [StringLength(150)]
         public string? Position { get; set; }
-        [RegularExpression("^([0-9]{10}$")]
+        [RegularExpression("^([0-9]{9})$")]
         public string? PhoneNumber { get; set; }
         [Range(50, 250)]
         public int? Height { get; set; }
