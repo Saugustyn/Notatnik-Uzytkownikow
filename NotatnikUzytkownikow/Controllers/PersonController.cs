@@ -51,10 +51,12 @@ namespace NotatnikUzytkownikow.Controllers
                 if (obj.Id == 0)
                 {
                     _db.Persons.Add(obj);
+                    TempData["success"] = "Użytkownik dodany pomyślnie!";
                 }
                 else
                 {
                     _db.Persons.Update(obj);
+                    TempData["success"] = "Dane użytkownika zaktualizowane!";
                 }
                 _db.SaveChanges();
 
@@ -87,7 +89,7 @@ namespace NotatnikUzytkownikow.Controllers
             // Loop through the users and add the data to the worksheet
             for (int i = 0; i < users.Count; i++)
             {
-                worksheet.Cells[i + 2, 1].Value = users[i].Gender == "Female" ? "Pani" : "Pan";
+                worksheet.Cells[i + 2, 1].Value = users[i].Gender == "Kobieta" ? "Pani" : "Pan";
                 worksheet.Cells[i + 2, 2].Value = users[i].FirstName;
                 worksheet.Cells[i + 2, 3].Value = users[i].LastName;
                 worksheet.Cells[i + 2, 4].Value = users[i].DateOfBirth.ToString();
@@ -97,8 +99,10 @@ namespace NotatnikUzytkownikow.Controllers
 
             string fileName = string.Format("{0}.xlsx", DateTime.Now.ToString("yyyy.MM.dd:HH-mm-ss"));
 
+            TempData["success"] = "Raport został wygenerowany!";
             // Return the Excel file to the client
             return File(excel.GetAsByteArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            
         }
     }
 }

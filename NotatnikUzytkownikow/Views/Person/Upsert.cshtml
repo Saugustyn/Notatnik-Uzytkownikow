@@ -1,5 +1,4 @@
 ﻿@model Person
-
 <form method="post" asp-action="Upsert" enctype="multipart/form-data" asp-validation-summary="All">
 	<input asp-for="Id" hidden />
 	<div class="row">
@@ -28,29 +27,30 @@
 					<span asp-validation-for="DateOfBirth" class="text-danger"></span>
 				</div>
 				<div class="mb-3">
+					<label asp-for="Gender"></label>
 					<select asp-for="Gender" class="form-control">
-						<option value="">--Select Gender--</option>
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
+						<option value="">--Płeć--</option>
+						<option value="Mężczyzna">Mężczyzna</option>
+						<option value="Kobieta">Kobieta</option>
 					</select>
 					<span asp-validation-for="Gender" class="text-danger"></span>
 				</div>
-				<div class="mb-3">
+				<div class="mb-3 col-6">
 					<label asp-for="Position"></label>
 					<input asp-for="Position" class="form-control" />
 					<span asp-validation-for="Position" class="text-danger"></span>
 				</div>
-				<div class="mb-3">
+				<div class="mb-3 col-6">
 					<label asp-for="PhoneNumber"></label>
 					<input asp-for="PhoneNumber" class="form-control" />
 					<span asp-validation-for="PhoneNumber" class="text-danger"></span>
 				</div>
-				<div class="mb-3">
+				<div class="mb-3 col-6">
 					<label asp-for="Height"></label>
 					<input asp-for="Height" class="form-control" />
 					<span asp-validation-for="Height" class="text-danger"></span>
 				</div>
-				<div class="mb-3">
+				<div class="mb-3 col-6">
 					<label asp-for="ShoeSize"></label>
 					<input asp-for="ShoeSize" class="form-control" />
 					<span asp-validation-for="ShoeSize" class="text-danger"></span>

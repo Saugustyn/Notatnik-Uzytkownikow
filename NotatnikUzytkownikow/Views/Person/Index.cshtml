@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = "Index";
 }
-
 <div class="container p-6">
     <div class="row pt-4">
         <div class="col-6">
@@ -57,7 +56,9 @@
                         </a>
                     </td>
                     <td widh="50%">
-                        @obj.LastName
+                        <a asp-controller="Person" asp-action="Upsert" asp-route-id="@obj.Id">
+                            @obj.LastName
+                        </a>
                     </td>
                     <td widh="50%">
                         @obj.DateOfBirth.ToShortDateString()
