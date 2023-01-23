@@ -99,7 +99,6 @@ namespace NotatnikUzytkownikow.Controllers
 
             string fileName = string.Format("{0}.xlsx", DateTime.Now.ToString("yyyy.MM.dd:HH-mm-ss"));
 
-            TempData["success"] = "Raport został wygenerowany!";
             // Return the Excel file to the client
             return File(excel.GetAsByteArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
             

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NotatnikUzytkownikow.Validation;
 using System.ComponentModel.DataAnnotations;
 
 namespace NotatnikUzytkownikow.Models
